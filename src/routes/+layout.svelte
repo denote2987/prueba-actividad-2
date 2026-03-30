@@ -1,3 +1,6 @@
+<script lang="ts">
+  export const prerender = true;
+</script>
 <svelte:head>
 	<title>Prueba Lectiva</title>
 	<meta
