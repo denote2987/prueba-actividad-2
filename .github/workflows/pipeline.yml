@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Directorio donde se genera el build (comúnmente 'dist' o 'build')
-          path: './dist' 
+          path: './.svelte-kit/output' 
 
       - name: Deploy to GitHub Pages
         id: deployment
