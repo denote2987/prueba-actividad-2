@@ -1,7 +1,12 @@
+import { building } from '$app/environment';
 import type { PageServerLoad } from './$types';
 import { listCharacters, type CharacterFilters } from '$lib/core/api/rick-and-morty';
 
 function readFilters(url: URL): CharacterFilters {
+	if (building) {
+		return {};
+	}
+
 	const query = url.searchParams.get('q') ?? url.searchParams.get('name') ?? '';
 	const pageParam = url.searchParams.get('page');
 	const page = pageParam ? Number(pageParam) : undefined;
